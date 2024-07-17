@@ -275,7 +275,7 @@ class setting:
            6> Содание sparse образа \033[93m[{settings.pack_sparse}]\033[0m
            7> Выбор типа файловой системы \033[93m[{settings.diyimgtype}]\033[0m
            8> Поддержка старых ядер \033[93m[{settings.erofs_old_kernel}]\033[0m\n
-           0> Вернуться в предыдущее меню
+           0> Вернуться назад
            --------------------------
         ''')
         op_pro = input("   Пожалуйста, сделайте выбор:")
@@ -326,10 +326,10 @@ class setting:
            3> Размер сектора/блока по умолчанию \033[93m[{settings.BLOCKSIZE}]\033[0m\n
            ----[Настройки Super образа]-----
            4> Выбрать размер блока \033[93m[{settings.SBLOCKSIZE}]\033[0m
-           5> Изменить названия Super образа \033[93m[{settings.supername}]\033[0m
+           5> Изменить название Super образа \033[93m[{settings.supername}]\033[0m
            6> Создание полного Super образа \033[93m[{settings.fullsuper}]\033[0m
            7> Добавление A/B структуры разделов \033[93m[{settings.autoslotsuffixing}]\033[0m\n
-           0> Вернуться в предыдущее меню
+           0> Вернуться назад
            --------------------------
         ''')
         op_pro = input("   Пожалуйста, введите число: ")
@@ -391,11 +391,11 @@ class setting:
         cls()
         print('''
     \033[33m  > Настройки \033[0m
-       1>Настройки упаковки\n
-       2>Настройки динамического раздела\n
-       3>Настройки программы\n
-       4>О программе\n
-       0>Вернуться на главную страницу
+       1> Настройки упаковки\n
+       2> Настройки динамического раздела\n
+       3> Настройки программы\n
+       4> О программе\n
+       0> Вернуться в главное меню
        --------------------------
     ''')
         op_pro = input("   Пожалуйста, введите число: ")
@@ -615,9 +615,9 @@ class Tool:
             f"  Проект：{self.pro}\n")
         if not os.path.exists(project_dir + os.sep + 'TI_out'):
             os.makedirs(project_dir + os.sep + 'TI_out')
-        print('\033[33m    0> Вернуться на главную страницу     2> Меню распаковки\033[0m\n')
+        print('\033[33m    0> Вернуться в главное меню          2> Меню распаковки\033[0m\n')
         print('\033[36m    3> Меню упаковки                     4> Меню плагинов\033[0m\n')
-        print('\033[32m    5> Собрать в zip архив               6> Пользовательские найстройки\033[0m\n')
+        print('\033[32m    5> Собрать в zip архив               6> Установка магиска (рута), удаление avb, шифрования\033[0m\n')
         op_menu = input("    Пожалуйста, введите число: ")
         if op_menu == '0':
             os.chdir(LOCALDIR)
@@ -639,9 +639,9 @@ class Tool:
 
     def custom_rom(self):
         cls()
-        print(" \033[31m>Пользовательское меню \033[0m\n")
+        print(" \033[31m>Функции для продвинутых пользователей \033[0m\n")
         print(f"  Проект：{self.pro}\n")
-        print('\033[33m    0> Вернуться назад                 1> Установить магиска в образ, для получения рута\033[0m\n')
+        print('\033[33m    0> Вернуться назад                 1> Установить магиск в образ, для получения рута\033[0m\n')
         print('\033[33m    2> Удалить avb                     3> Удалить шифрование данных\033[0m\n')
         op_menu = input("    Пожалуйста, введите число: ")
         if op_menu == '0':
@@ -709,7 +709,7 @@ class Tool:
         project = LOCALDIR + os.sep + self.pro
         print(" \033[31m>Упаковка прошивки \033[0m\n")
         print(f"  Проект：{os.path.basename(project)}\n")
-        print('\033[33m    1> Собрать прошивку в zip архив     2> Собрать прошивку в zip архив и добавить скрипт для прошивки как через TWRP\OFOX, так и с помощью компьютера \n    3> Вернуться назад\033[0m\n')
+        print('\033[33m    1> Собрать прошивку в zip архив     2> Собрать прошивку и добавить в zip архив скрипт, чтобы прошивку можно было прошить через fastboot используя ПК и через TWRP\OFOX \n    3> Вернуться назад\033[0m\n')
         chose = input("    Пожалуйста, введите число: ")
         if chose == '1':
             print("Подготовка к упаковке...")
@@ -738,7 +738,7 @@ class Tool:
         zipn = 0
         zips = {}
         print(" \033[31m >Список прошивок \033[0m\n")
-        ywarn(f"   Пожалуйста, выберите прошивку {LOCALDIR}！\n")
+        ywarn(f"   Пожалуйста, выберите zip архив с прошивкой: {LOCALDIR}！\n")
         if dir_has(LOCALDIR, '.zip'):
             for zip0 in os.listdir(LOCALDIR):
                 if zip0.endswith('.zip'):
@@ -1002,7 +1002,7 @@ def unpack_choo(project):
     files = {}
     infos = {}
     ywarn(f"  Пожалуйста, поместите файлы в корневой каталог: {project}！\n")
-    print(" [0]- Распаковать все файлы (без лишних запросов)\n")
+    print(" [0]- Распаковать все файлы в автоматическом режиме (без лишних запросов)\n")
     if dir_has(project, '.br'):
         print("\033[33m [Br]файлы\033[0m\n")
         for br0 in os.listdir(project):
@@ -1101,7 +1101,7 @@ def unpack_choo(project):
                     print(f'   [{filen}]- {dtb0}\n')
                     files[filen] = dtb0
                     infos[filen] = 'dtb'
-    print("\n\033[33m  [00] Возврат [77] Пакетная распаковка (с запросами для каждого файла)  \033[0m")
+    print("\n\033[33m  [00] Вернуться назад [77] Автоматическая распаковка всех разделов (с запросами для каждого раздела)  \033[0m")
     print("  --------------------------------------")
     filed = input("  Пожалуйста, введите число：")
     if filed == '0':
@@ -1135,7 +1135,7 @@ def packChoo(project):
     if not os.path.exists(project + os.sep + "config"):
         os.makedirs(project + os.sep + "config")
     if project:
-        print("   [0]- Собрать все разделы (без лишних запросов)\n")
+        print("   [0]- Собрать указанные ниже разделы в автоматическом режиме (без лишних запросов)\n")
         for packs in os.listdir(project):
             if os.path.isdir(project + os.sep + packs):
                 if os.path.exists(project + os.sep + "config" + os.sep + packs + "_fs_config"):
@@ -1162,7 +1162,7 @@ def packChoo(project):
                     parts[partn] = packs
                     types[partn] = 'dtbo'
                     print(f"   [{partn}]- {packs} <dtbo>\n")
-        print("\n\033[33m [55] Пакетная сборка (с запросами для каждого образа) [66] Собрать Super [77] Собрать Payload [00]Вернуться назад\033[0m")
+        print("\n\033[33m [55] Автоматическая сборка всех разделов (с запросами для каждого раздела) [66] Собрать Super [77] Собрать Payload [00]Вернуться назад\033[0m")
         print("  --------------------------------------")
         filed = input("  Пожалуйста, введите число：")
         if filed == '0':
@@ -1174,7 +1174,7 @@ def packChoo(project):
             else:
                 form = 'img'
             if settings.diyimgtype == '1':
-                imgtype = input("Собрать все разделы в：[1]ext4 [2]erofs [3]f2fs:")
+                imgtype = input("Собрать разделы в：[1]ext4 [2]erofs [3]f2fs:")
                 if imgtype == '1':
                     imgtype = 'ext'
                 elif imgtype == '2':
@@ -1202,7 +1202,7 @@ def packChoo(project):
             else:
                 form = 'img'
             if settings.diyimgtype == '1':
-                imgtype = input("Собрать все разделы в：[1]ext4 [2]erofs [3]f2fs:")
+                imgtype = input("Собрать разделы в：[1]ext4 [2]erofs [3]f2fs:")
                 if imgtype == '1':
                     imgtype = 'ext'
                 elif imgtype == '2':
@@ -1234,7 +1234,7 @@ def packChoo(project):
         elif filed.isdigit():
             if int(filed) in parts.keys():
                 if settings.diyimgtype == '1' and types[int(filed)] not in ['bootimg', 'dtb', 'dtbo']:
-                    imgtype = input("Собрать все разделы в：[1]ext4 [2]erofs [3]f2fs:")
+                    imgtype = input("Собрать разделы в：[1]ext4 [2]erofs [3]f2fs:")
                     if imgtype == '1':
                         imgtype = 'ext'
                     elif imgtype == '2':
@@ -1564,7 +1564,7 @@ def packsuper(project):
     isreadonly = input("Собрать образ с правами только для чтения？[1/0]")
     ifsparse = input("Собрать sparse образ？[1/0]")
     if not os.listdir(project + os.sep + 'super'):
-        print("Похоже, у вас нет разделов, которые вы хотите собрать. Хотите выбрать следующие разделы?：")
+        print("Похоже, у вас нет разделов для упаковки. Хотите переместить и упаковать следующие разделы?：")
         move_list = []
         for i in os.listdir(project + os.sep + 'TI_out'):
             if os.path.isfile(os.path.join(project + os.sep + 'TI_out', i)):
@@ -1910,7 +1910,7 @@ def autounpack(project):
         elif os.path.abspath(infile).endswith('.list') or os.path.abspath(infile).endswith('.patch.dat'):
             continue
         if ask_ != '1':
-            if not input(f"Распаковать {infile} [1/0]") == '1':
+            if not input(f"Распаковать {infile}? [1/0]") == '1':
                 continue
         if infile.endswith('.new.dat.br'):
             unpack(os.path.abspath(infile), 'br', project)
