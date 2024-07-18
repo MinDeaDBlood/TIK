@@ -56,7 +56,7 @@ Note: У WSL может быть проблема с неправильными 
 2. Affggh
 3. Yeliqin666
 4. [qlenlen - For F2FS REPACK](https://github.com/qlenlen)
-5. Перевод и адаптация на русский: Rayne Kobatashi (https://github.com/MinDeaDBlood)
+5. Перевод и адаптация на русский: Rayne Kobayashi (https://github.com/MinDeaDBlood)
 #### **Поддерживаемые ОС**
 1. Android-(Termux) | ARM64
 2. Windows 7 и новее | AMD64 X86 ARM64
