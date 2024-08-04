@@ -19,6 +19,7 @@ except ImportError:
 
 class Extractor:
     def __init__(self):
+        self.error_times = 0
         self.CONFIG_DIR = None
         self.FileName = ""
         self.OUTPUT_IMAGE_FILE = ""
@@ -93,11 +94,15 @@ class Extractor:
     def __ext4extractor(self):
         def scan_dir(root_inode, root_path=""):
             for entry_name, entry_inode_idx, entry_type in root_inode.open_dir():
+                if self.error_times >= 200:
+                    print("Some thing wrong,Stop!")
+                    break
                 if entry_name in ['.', '..'] or entry_name.endswith(' (2)'):
                     continue
                 entry_inode = root_inode.volume.get_inode(entry_inode_idx, entry_type)
                 entry_inode_path = root_path + '/' + entry_name
                 if entry_inode_path[-1:] == '/' and not entry_inode.is_dir:
+                    self.error_times += 1
                     continue
 
                 mode = self.__get_perm(entry_inode.mode_str)
