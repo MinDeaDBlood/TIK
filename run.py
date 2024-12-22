@@ -16,8 +16,29 @@ import banner
 import ext4
 from Magisk import Magisk_patch
 import os
+import gettext
+import locale
 
 from dumper import Dumper
+
+# Define Language
+lang, _ = locale.getdefaultlocale()
+language = lang if lang else "en"
+
+# Setting paths to translation files
+locale_path = o_path.join(os.getcwd(), 'locales')
+translation = gettext.translation('messages', localedir=locale_path, languages=[language])
+translation.install()
+
+# Language selection function
+def set_language(lang_code):
+    global translation
+    try:
+        translation = gettext.translation('messages', localedir=locale_path, languages=[lang_code])
+        translation.install()
+        print(_("Language set to: ") + lang_code)
+    except FileNotFoundError:
+        print(_("Language not supported."))
 
 if os.name == 'nt':
     import ctypes
