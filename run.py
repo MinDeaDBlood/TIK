@@ -1,3 +1,5 @@
+import logging
+import os
 import hashlib
 import json
 import platform as plat
@@ -14,30 +16,43 @@ from os import path as o_path
 import banner
 import ext4
 from Magisk import Magisk_patch
-import os
 import gettext
 import locale
-
 from dumper import Dumper
 
-# Define Language
-lang, _ = locale.getdefaultlocale()
-language = lang if lang else "zh"
+# Настройка логирования
+log_file = "error_log.txt"
+logging.basicConfig(filename=log_file, level=logging.ERROR,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger()
 
-# Setting paths to translation files
-locale_path = o_path.join(os.getcwd(), 'locales')
-translation = gettext.translation('messages', localedir=locale_path, languages=[language])
-translation.install()
+# Функция, которая будет использоваться для логирования ошибок
+def log_error(message):
+    logger.error(message)
 
-# Language selection function
-def set_language(lang_code):
-    global translation
+# Пример вывода ошибок
+def example_function():
     try:
-        translation = gettext.translation('messages', localedir=locale_path, languages=[lang_code])
-        translation.install()
-        print(_("Language set to: ") + lang_code)
-    except FileNotFoundError:
-        print(_("Language not supported."))
+        # Ваш код, который может вызвать ошибку
+        1 / 0  # Искусственная ошибка для примера
+    except Exception as e:
+        log_error(f"Ошибка в example_function: {str(e)}")
+
+# Пример основного кода
+try:
+    # Определяем язык
+    lang, _ = locale.getdefaultlocale()
+    language = lang if lang else "en"  
+
+    # Установка путей к файлам переводов
+    locale_path = o_path.join(os.getcwd(), 'locales')
+    translation = gettext.translation('messages', localedir=locale_path, languages=[language])
+    translation.install()
+    
+    example_function()  # Вызов функции, которая может вызвать ошибку
+
+except Exception as e:
+    log_error(f"Ошибка во время инициализации: {str(e)}")
 
 if os.name == 'nt':
     import ctypes
