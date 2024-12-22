@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Binary file not found\nYour device may not be supported"
+msgstr "Двоичный файл не найден\nВозможно, ваше устройство не поддерживается"
+
+msgid "Cannot remove the folder, insufficient permissions"
+msgstr "Не удается удалить папку, недостаточно разрешений"
+
+msgid "Successfully deleted!"
+msgstr "Удалено успешно!"
+
+msgid "Error: {exception_type.__name__}"
+msgstr "Ошибка: {exception_type.__name__}"
+
+msgid "Description: {exception}"
+msgstr "Описание: {exception}"
+
+msgid "Line: {exception.__traceback__.tb_lineno}\tModule: {exception.__traceback__.tb_frame.f_globals['__name__']}"
+msgstr "Строки: {exception.__traceback__.tb_lineno}\tМодуль: {exception.__traceback__.tb_frame.f_globals['__name__']}"
+
+msgid "Platform: {plat.machine()}\tSystem: {plat.uname().system} {plat.uname().release}"
+msgstr "Платформа: {plat.machine()}\tСистема: {plat.uname().system} {plat.uname().release}"
+
+msgid "Python version: {sys.version[:6]}\tProgram version: {version}"
+msgstr "Версия Python: {sys.version[:6]}\tВерсия программы: {version}"
+
+msgid "You are using the latest version! Press any key to return!"
+msgstr "Вы используете последнюю версию! Нажмите любую кнопку для возврата!"
+
+msgid "Failed to connect to the server, press any key to return"
+msgstr "Не удалось подключиться к серверу, нажмите любую кнопку для возврата"
+
+msgid "New version: {current_version} --> {new_version}"
+msgstr "Новая версия: {current_version} --> {new_version}"
+
+msgid "Changes:\n{changes_log}"
+msgstr "Изменения:\n{changes_log}"
+
+msgid "Update not found, please visit the link"
+msgstr "Обновление не найдено, пожалуйста, перейдите по ссылке"
+
+msgid "Input error!"
+msgstr "Ошибка ввода!"
+
+msgid "Thank you for using TI-KITCHEN5, goodbye!"
+msgstr "Спасибо за использование TI-KITCHEN5, до свидания!"
+
+msgid "Welcome to the Tool!"
+msgstr "Добро пожаловать в инструмент!"
+
+msgid "Hello! Please select an option:"
+msgstr "Здравствуйте! Пожалуйста, выберите вариант:"
+
+msgid "Please enter the project number you want to delete:"
+msgstr "Пожалуйста, введите число проекта, который хотите удалить:"
+
+msgid "Failed to download, please try again later"
+msgstr "Ошибка загрузки, пожалуйста, повторите попытку позже"
+
+msgid "Parsing error: %s"
+msgstr "Ошибка анализа: %s"
+
+msgid "Build failed"
+msgstr "Сборка завершилась неудачей"
+
+msgid "Build image in sparse?"
+msgstr "Собрать образ в sparse?"
+
+msgid "Create a dynamic partition image?"
+msgstr "Создать образ динамического раздела?"
+
+msgid "Please choose a compression method for EROFS: lz4/lz4hc/lzma"
+msgstr "Пожалуйста, выберите способ сжатия для EROFS: lz4/lz4hc/lzma"
+
+msgid "Select the type of filesystem: [1] Original [2] Choose (ext4 <==> erofs)"
+msgstr "Выберите тип файловой системы: [1] Оригинал [2] Выбрать (ext4 <==> erofs)"
+
+msgid "Do you want to use sparse image?"
+msgstr "Хотите использовать sparse образ?"
+
+msgid "Please enter your customization: "
+msgstr "Пожалуйста, введите свои настройки: "
+
+msgid "Looking for updates..."
+msgstr "Поиск обновлений..."
+
+msgid "You must specify a URL to download."
+msgstr "Вы должны указать URL для загрузки."
+
+msgid "Update successful! Press any key to continue."
+msgstr "Обновление успешно! Нажмите любую клавишу для продолжения."
+
+msgid "Installation complete! You can now run the program."
+msgstr "Установка завершена! Вы можете теперь запустить программу."
+
+msgid "Invalid input! Please try again."
+msgstr "Недопустимый ввод! Пожалуйста, попробуйте снова."
+
+msgid "An unknown error occurred: %s"
+msgstr "Произошла неизвестная ошибка: %s"
+
+msgid "Do you want to exit the program? [1] Yes [2] No"
+msgstr "Вы хотите выйти из программы? [1] Да [2] Нет"
+
+msgid "Please select the extraction method:"
+msgstr "Пожалуйста, выберите метод распаковки:"
+
+msgid "Current version: {version}"
+msgstr "Текущая версия: {version}"
+
+msgid "Unknown file type"
+msgstr "Неизвестный тип файла"
+
+msgid "Successfully unpacked: %s"
+msgstr "Успешно распаковано: %s"
+
+msgid "Please wait, processing..."
+msgstr "Пожалуйста, подождите, идет обработка..."
+
+msgid "You have a new update available."
+msgstr "У вас доступно новое обновление."
+
+msgid "File not found: %s"
+msgstr "Файл не найден: %s"
+
+msgid "Directory created: %s"
+msgstr "Каталог создан: %s"
+
+msgid "Operation completed successfully."
+msgstr "Операция выполнена успешно."
+
+msgid "Please ensure you have the necessary permissions."
+msgstr "Пожалуйста, убедитесь, что у вас есть необходимые разрешения."
+
+msgid "Could not complete the operation."
+msgstr "Не удалось завершить операцию."
+
+msgid "Missing required argument: %s"
+msgstr "Отсутствует обязательный аргумент: %s"
+
+msgid "Retrieving information, please wait..."
+msgstr "Получение информации, пожалуйста, подождите..."
+
+msgid "The selected option is not valid."
+msgstr "Выбранный вариант недоступен."
+
+msgid "Clearing temporary files..."
+msgstr "Очистка временных файлов..."
+
+msgid "Backup completed successfully."
+msgstr "Резервное копирование выполнено успешно."
+
+msgid "Please configure your settings."
+msgstr "Пожалуйста, настройте свои параметры."
+
+msgid "Item not found!"
+msgstr "Элемент не найден!"
+
+msgid "Configuration saved successfully!"
+msgstr "Конфигурация успешно сохранена!"
+
+msgid "Processing files, please wait..."
+msgstr "Обработка файлов, пожалуйста, подождите..."
+
+msgid "This feature is not yet implemented."
+msgstr "Эта функция пока не реализована."
+
+msgid "Are you sure you want to continue?"
+msgstr "Вы уверены, что хотите продолжить?"
+
+msgid "Insufficient space for operation."
+msgstr "Недостаточно места для операции."
+
+msgid "File already exists: %s"
+msgstr "Файл уже существует: %s"
+
+msgid "Welcome to TI-KITCHEN5!"
+msgstr "Добро пожаловать в TI-KITCHEN5!"
+
+msgid "Downloading update..."
+msgstr "Скачивание обновления..."
+
+msgid "Verifying file..."
+msgstr "Проверка файла..."
+
+msgid "Cleanup completed."
+msgstr "Очистка завершена."
+
+msgid "The operation was cancelled."
+msgstr "Операция была отменена."
+
+msgid "File processing error: %s"
+msgstr "Ошибка обработки файла: %s"
+
+msgid "Loading configuration..."
+msgstr "Загрузка конфигурации..."
